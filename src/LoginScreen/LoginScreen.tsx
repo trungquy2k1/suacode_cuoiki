@@ -8,7 +8,7 @@ import {
   View,
   Alert,
 } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
 export default function LoginScreen() {
   const [username, setUsername] = useState('');
@@ -36,32 +36,31 @@ export default function LoginScreen() {
 
   const handleLogin = () => {
     if (username === '') {
-        setUsernameError('Vui lòng điền thông tin');
-      } else {
-        setUsernameError('');
-      }
-  
-      if (pass === '') {
-        setPasswordError('Vui lòng điền thông tin');
-      } else {
-        setPasswordError('');
-      }
-  
-      if (username !== '' && pass !== '') {
-        setError('');
-        Alert.alert(`Chào mừng ${username} đăng nhập`);
-        
-        navigation.navigate('Home');
+      setUsernameError('Vui lòng điền thông tin');
+    } else {
+      setUsernameError('');
+    }
 
-      } else {
-        setError('Vui lòng điền đủ thông tin agggggggg');
-      }
+    if (pass === '') {
+      setPasswordError('Vui lòng điền thông tin');
+    } else {
+      setPasswordError('');
+    }
+
+    if (username !== '' && pass !== '') {
+      setError('');
+      Alert.alert(`Chào mừng ${username} đăng nhập`);
+
+      navigation.navigate('Home');
+    } else {
+      setError('Vui lòng điền đủ thông tin agggggggg');
+    }
   };
 
   return (
     <SafeAreaView style={styles.root}>
       <View style={styles.container}>
-        <Text style={styles.text}> Welcome </Text>
+        <Text style={styles.text}> Welcome Login </Text>
         <TextInput
           style={styles.input}
           placeholder="Tên đăng nhập "
@@ -91,7 +90,7 @@ export default function LoginScreen() {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button2}>
-          <Text style={{fontWeight: 'bold', color: 'gray', fontSize: 18}}>
+          <Text style={{fontWeight: 'bold', color: '#fff', fontSize: 18}}>
             Google
           </Text>
         </TouchableOpacity>
@@ -105,7 +104,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-   backgroundColor:'#28dead',
+    backgroundColor: '#aaff80',
   },
   container: {
     // borderRadius: 10,
@@ -159,10 +158,11 @@ const styles = StyleSheet.create({
   button2: {
     height: 40,
     margin: 4,
-    backgroundColor: 'white',
+    backgroundColor: '#ffb3b3',
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 60,
     marginHorizontal: 16,
+    //backgroundColor: '#ffb3b3',
   },
 });

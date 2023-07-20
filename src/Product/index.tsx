@@ -1,76 +1,78 @@
 import React, {useState} from 'react';
 import {FlatList, Image, Text, TouchableOpacity, View} from 'react-native';
 import styles from './styles';
-const images = [
+import {useNavigation} from '@react-navigation/native';
+
+const images: ItemData[] = [
   {
     id: '1',
-    source: require('./sp/anh1.jpg'),
+    image: require('./sp/anh1.jpg'),
     title: 'Vegan Cookies',
     title1: '$2,950,000',
   },
   {
     id: '2',
-    source: require('./sp/anh3.jpg'),
+    image: require('./sp/anh3.jpg'),
     title: 'Pumpkin Spice Cookies',
     title1: '$2,950,000',
   },
   {
     id: '3',
-    source: require('./sp/anh4.jpg'),
+    image: require('./sp/anh4.jpg'),
     title: 'San Francisco, CA',
     title1: '$2,950,000',
   },
   {
     id: '4',
-    source: require('./sp/banh2.jpg'),
+    image: require('./sp/banh2.jpg'),
     title: 'San Francisco, CA',
     title1: '$2,950,000',
   },
   {
     id: '5',
-    source: require('./sp/banh3.jpg'),
+    image: require('./sp/banh3.jpg'),
     title: 'San Francisco, CA',
     title1: '$2,950,000',
   },
   {
     id: '6',
-    source: require('./sp/banh4.jpg'),
+    image: require('./sp/banh4.jpg'),
     title: 'San Francisco, CA',
     title1: '$2,950,000',
   },
   {
     id: '7',
-    source: require('./sp/banh5.jpg'),
+    image: require('./sp/banh5.jpg'),
     title: 'San Francisco, CA',
     title1: '$2,950,000',
   },
   {
     id: '8',
-    source: require('./sp/banh6.jpg'),
+    image: require('./sp/banh6.jpg'),
     title: 'San Francisco, CA',
     title1: '$2,950,000',
   },
   {
     id: '9',
-    source: require('./sp/banh2.jpg'),
+    image: require('./sp/banh2.jpg'),
     title: 'San Francisco, CA',
     title1: '$2,950,000',
   },
   {
     id: '10',
-    source: require('./sp/banh3.jpg'),
+    image: require('./sp/banh3.jpg'),
     title: 'San Francisco, CA',
     title1: '$2,950,000',
   },
   {
     id: '11',
-    source: require('./sp/anh4.jpg'),
+    image: require('./sp/anh4.jpg'),
     title: 'San Francisco, CA',
     title1: '$2,950,000',
   },
   {
     id: '12',
-    source: require('./sp/banh2.jpg'),
+    image: require('./sp/banh2.jpg'),
     title: 'San Francisco, CA',
     title1: '$2,950,000',
   },
@@ -83,10 +85,16 @@ const Product = () => {
     setIsExpanded(!isExpanded);
   };
   //
+  const navigation = useNavigation();
 
+  const handleImagePress = (item: ItemData) => {
+    navigation.navigate('Chitietsp', {item}); // replace 'Product' with the name of your Product screen
+  };
   const renderItem = ({item}) => (
     <View style={styles.anh1}>
-      <Image source={item.source} style={{width: 180, height: 120}} />
+      <TouchableOpacity onPress={handleImagePress}>
+        <Image source={item.image} style={{width: 180, height: 120}} />
+      </TouchableOpacity>
       <View>
         <Text style={styles.text}>{item.title}</Text>
         <Text style={styles.text1}>{item.title1}</Text>
@@ -116,7 +124,7 @@ const Product = () => {
       <TouchableOpacity
         onPress={handlePress}
         style={{
-          backgroundColor: '##4f8af4',
+          backgroundColor: '#4f8af4',
           alignItems: 'center',
           borderRadius: 10,
         }}>

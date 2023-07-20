@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import styles from './styles';
 
-const Chitietsp = ({ route }: { route: any }) => {
-  const { item } = route.params;
+const Chitietsp = ({route}: {route: any}) => {
+  const {item} = route.params;
   const navigation = useNavigation();
 
   const handleDathangPress = () => {
