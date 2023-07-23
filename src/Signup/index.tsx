@@ -61,8 +61,8 @@ const styles = StyleSheet.create({
   },
   title: {
     color: '#20C065',
-    fontSize: 24,
-    marginBottom: 100,
+    fontSize: 30,
+    marginBottom: 50,
     paddingRight: 180,
   },
   title1: {

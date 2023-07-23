@@ -64,6 +64,7 @@ export default function LoginScreen() {
         <TextInput
           style={styles.input}
           placeholder="Tên đăng nhập "
+          placeholderTextColor="black"
           value={username}
           onChangeText={text => setUsername(text)}
         />
@@ -71,6 +72,7 @@ export default function LoginScreen() {
         <TextInput
           style={styles.input}
           placeholder="Mật khẩu"
+          placeholderTextColor="black"
           value={pass}
           onChangeText={text => setPass(text)}
           secureTextEntry
@@ -122,13 +124,16 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    height: 40,
+    height: 50,
     width: 370,
-    marginHorizontal: 16,
+    marginHorizontal: 12,
     borderColor: 'gray',
     borderRadius: 10,
     borderWidth: 1,
     marginTop: 10,
+    fontSize: 16,
+    backgroundColor: '#fff',
+    paddingHorizontal: 15,
   },
   button: {
     height: 40,

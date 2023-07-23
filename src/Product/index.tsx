@@ -3,7 +3,7 @@ import {FlatList, Image, Text, TouchableOpacity, View} from 'react-native';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 
-const images: ItemData[] = [
+const images = [
   {
     id: '1',
     image: require('./sp/anh1.jpg'),
@@ -87,7 +87,7 @@ const Product = () => {
   //
   const navigation = useNavigation();
 
-  const handleImagePress = (item: ItemData) => {
+  const handleImagePress = (item: any) => {
     navigation.navigate('Chitietsp', {item}); // replace 'Product' with the name of your Product screen
   };
   const renderItem = ({item}) => (
@@ -100,7 +100,6 @@ const Product = () => {
         <Text style={styles.text1}>{item.title1}</Text>
       </View>
     </View>
-    
   );
 
   return (

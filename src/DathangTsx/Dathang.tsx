@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, TouchableOpacity, Alert} from 'react-native';
 import styles from './styles';
-
+import {useNavigation} from '@react-navigation/native';
 const Dathang = () => {
+  const navigation = useNavigation();
   const [img, setImg] = useState(require('./dathang/anh1.jpg'));
   const changeImage = (image: any) => {
     setImg(image);
   };
-
   const [count, setCount] = useState(1);
   const gia = 25000;
   const onIncrease = () => {
@@ -20,7 +20,7 @@ const Dathang = () => {
   const tongGia = count * gia;
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Bánh quy lúa mạch</Text>
+      <Text style={styles.title}>Oatmeal cookies</Text>
       <View>
         <Image source={img} style={styles.image} />
 
@@ -69,7 +69,17 @@ const Dathang = () => {
         </View>
         <View style={styles.giaban}>
           <Text style={styles.txtgia}>{tongGia} vnd</Text>
-          <TouchableOpacity style={styles.btngia}>
+          <TouchableOpacity
+            style={styles.btngia}
+            onPress={() =>
+              Alert.alert('Đặt hàng thành công', 'My Alert Msg', [
+                {
+                  text: 'OK',
+                  onPress: () => navigation.navigate('Product'),
+                  style: 'default',
+                },
+              ])
+            }>
             <Text style={{fontSize: 30, color: '#fff'}}>Đặt hàng</Text>
           </TouchableOpacity>
         </View>

@@ -11,6 +11,7 @@ import Product from './src/Product';
 import Search from './src/Search/Search';
 import LandingScreen from './src/Landing/Landing';
 import Signup from './src/Signup';
+import Profile from './src/Profile/Profile';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 
 const Tab = createMaterialBottomTabNavigator();
@@ -52,6 +53,19 @@ const StackScreen = () => {
           tabBarIcon: () => (
             <Image
               source={require('./asset/icon7.png')}
+              style={{height: 30, width: 30}}
+              resizeMode="stretch"
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarIcon: () => (
+            <Image
+              source={require('./asset/icon6.png')}
               style={{height: 30, width: 30}}
               resizeMode="stretch"
             />
