@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text, Image, TouchableOpacity, Alert} from 'react-native';
 import styles from './styles';
+import Header from '../Head';
 import {useNavigation} from '@react-navigation/native';
 const Dathang = () => {
   const navigation = useNavigation();
@@ -20,6 +21,7 @@ const Dathang = () => {
   const tongGia = count * gia;
   return (
     <View style={styles.container}>
+      <Header navigation={navigation}/>
       <Text style={styles.title}>Oatmeal cookies</Text>
       <View>
         <Image source={img} style={styles.image} />

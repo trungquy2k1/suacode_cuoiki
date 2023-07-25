@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import Header from '../Head';
 import styles from './styles';
 
 const Chitietsp = ({route}: {route: any}) => {
@@ -13,6 +14,7 @@ const Chitietsp = ({route}: {route: any}) => {
 
   return (
     <View style={styles.chitietsp}>
+      <Header navigation={navigation} />
       <View>
         <Image source={item.image} style={styles.img} />
       </View>

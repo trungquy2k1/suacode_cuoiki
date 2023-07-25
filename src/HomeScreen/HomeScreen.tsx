@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, FlatList, View, TouchableOpacity} from 'react-native';
+import {StyleSheet, FlatList, View, TouchableOpacity, Text} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import Item, {ItemData} from './Item';
 
@@ -29,6 +29,16 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
+      <Text
+        style={{
+          fontSize: 30,
+          textAlign: 'center',
+          fontWeight: '700',
+          color: '#000',
+          marginBottom: 10,
+        }}>
+        Home
+      </Text>
       <FlatList
         data={data}
         renderItem={renderItem}

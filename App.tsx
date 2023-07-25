@@ -12,6 +12,7 @@ import Search from './src/Search/Search';
 import LandingScreen from './src/Landing/Landing';
 import Signup from './src/Signup';
 import Profile from './src/Profile/Profile';
+import Header from './src/Head';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 
 const Tab = createMaterialBottomTabNavigator();
@@ -79,9 +80,11 @@ const StackScreen = () => {
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="LandingScreen">
-      <Stack.Screen name="Landing" component={LandingScreen} />
-      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Navigator
+        initialRouteName="LandingScreen"
+        screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Landing" component={LandingScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="Home" component={StackScreen} />
         <Stack.Screen name="Chitietsp" component={Chitietsp} />
