@@ -7,7 +7,9 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 export default function Signup() {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.title1}>
@@ -44,8 +46,7 @@ export default function Signup() {
       <View>
         <TouchableOpacity
           style={styles.but1}
-          //onPress={() => navigation.navigate("Signin")}
-        >
+          onPress={() => navigation.navigate("Login")}>
           <Text style={styles.but2}>Sign Up</Text>
         </TouchableOpacity>
       </View>

@@ -96,6 +96,16 @@ export default function LoginScreen() {
             Google
           </Text>
         </TouchableOpacity>
+        <View style={styles.chuyenlogout}>
+          <Text style={{color: '#000', fontSize: 18}}>
+            Bạn chưa có tài khoản?
+          </Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
+            <Text style={{color: 'blue', fontSize: 18, marginLeft: 8}}>
+              Sign up
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -169,5 +179,11 @@ const styles = StyleSheet.create({
     borderRadius: 60,
     marginHorizontal: 16,
     //backgroundColor: '#ffb3b3',
+  },
+  chuyenlogout: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    marginTop: 15,
   },
 });
